@@ -2,26 +2,106 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+input[type=number].appearance-none::-webkit-inner-spin-button,
+input[type=number].appearance-none::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+input[type=number].appearance-none {
+  -moz-appearance: textfield;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+/* Font Stlyes */
+.title-1 {
+  @apply text-6xl leading-tight font-bold;
+}
+
+.title-2 {
+  @apply text-5xl leading-tight font-bold;
+}
+
+.title-3 {
+  @apply text-4xl leading-10 font-extrabold;
+}
+
+.headline {
+  @apply text-2xl leading-8 font-extrabold;
+}
+
+.subheadline {
+  @apply text-lg leading-8 font-bold;
+}
+
+.body {
+  @apply text-base font-normal;
+}
+
+.body-bold {
+  @apply text-base font-bold;
+}
+
+.body-small {
+  @apply text-sm leading-6 font-normal;
+}
+
+.body-small-bold {
+  @apply text-sm leading-6 font-bold;
+}
+
+.caption {
+  @apply text-xs font-semibold;
+}
+
+.button-lg {
+  @apply text-base font-semibold;
+}
+
+.button-md {
+  @apply text-sm leading-4 font-bold;
+}
+
+.button-sm {
+  @apply text-xs font-bold;
+}
+
+/* Font Stlyes */
+
+
+.ratio {
+  position: relative;
+}
+
+.ratio>* {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.ratio-standard::before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: calc((1800 / 1200) * 100%);
+}
+
+.ratio-square::before {
+  display: block;
+  content: "";
+  width: 100%;
+  padding-top: calc((1000 / 1000) * 100%);
+}
+
+.canvas-container>canvas {
+  width: 100%;
+}
+
+.image-placeholder>div {
+  @apply w-16 h-16;
+}
+
+.image-placeholder>div>svg {
+  @apply w-16 h-16;
 }
