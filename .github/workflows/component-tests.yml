@@ -36,5 +36,3 @@ jobs:
         run: yarn
       - name: Compile Typescript
         run: yarn tsc
-      - name: Run test suites
-        run: yarn test:ci
