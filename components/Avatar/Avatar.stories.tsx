@@ -17,7 +17,7 @@ export const IconAvatar: Story = {
     size: 'lg',
     style: 'square',
     variant: 'icon',
-    image: "https://picsum.photos/200"
+    image: "https://picsum.photos/seed/virtual-pantry/200"
   },
 };
 
@@ -26,7 +26,7 @@ export const ImageAvatar: Story = {
     size: 'lg',
     style: 'square',
     variant: 'image',
-    image: 'https://picsum.photos/200'
+    image: 'https://picsum.photos/seed/virtual-pantry/200'
   },
 };
 
