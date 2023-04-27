@@ -13,7 +13,7 @@
     "test": "jest --watch",
     "test:ci": "jest --ci",
     "test-storybook": "test-storybook",
-    "chromatic": "npx chromatic --project-token=9f354c9e287a",
+    "chromatic": "chromatic --project-token=CHROMATIC_PROJECT_TOKEN",
     "vercel-build": "prisma generate && prisma migrate deploy && next build"
   },
   "dependencies": {
