@@ -1,5 +1,6 @@
+import { Layout } from '@/components/Layout'
+import { LayoutProvider } from '@/components/Layout/LayoutContext'
 import '@/styles/globals.css'
-import { withPageAuthRequired } from '@auth0/nextjs-auth0'
 import { UserProvider } from '@auth0/nextjs-auth0/client'
 import type { AppProps } from 'next/app'
 import { Nunito_Sans } from 'next/font/google'
@@ -10,7 +11,11 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <div className={nunitoSans.className}>
       <UserProvider>
-        <Component {...pageProps} />
+        <LayoutProvider>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </LayoutProvider>
       </UserProvider>
     </div>
   )
