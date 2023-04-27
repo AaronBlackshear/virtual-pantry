@@ -12,8 +12,29 @@ const meta: Meta<typeof Avatar> = {
 export default meta;
 type Story = StoryObj<typeof Avatar>;
 
-// More on writing stories with args: https://storybook.js.org/docs/7.0/react/writing-stories/args
-export const Primary: Story = {
+export const IconAvatar: Story = {
   args: {
+    size: 'lg',
+    style: 'square',
+    variant: 'icon',
+    image: "https://picsum.photos/200"
+  },
+};
+
+export const ImageAvatar: Story = {
+  args: {
+    size: 'lg',
+    style: 'square',
+    variant: 'image',
+    image: 'https://picsum.photos/200'
+  },
+};
+
+export const InitialsAvatar: Story = {
+  args: {
+    size: 'lg',
+    style: 'square',
+    variant: 'initials',
+    initials: 'AB'
   },
 };
