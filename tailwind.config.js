@@ -11,6 +11,10 @@ module.exports = {
         base: [
           '0 12px 16px rgba(0, 0, 0, 0.08)',
           '0 4px 56px rgba(0, 0, 0, 0.08)',
+        ],
+        '16dp': [
+          '0 8px 12px rgba(0, 0, 0, 0.08)',
+          '0 4px 48px rgba(0, 0, 0, 0.08)',
         ]
       },
       colors: {
@@ -122,5 +126,5 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [require('@headlessui/tailwindcss')],
 }
