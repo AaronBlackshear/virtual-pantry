@@ -2953,7 +2953,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-essentials@npm:^7.0.2":
+"@storybook/addon-essentials@npm:^7.0.7":
   version: 7.0.7
   resolution: "@storybook/addon-essentials@npm:7.0.7"
   dependencies:
@@ -2989,7 +2989,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-interactions@npm:^7.0.2":
+"@storybook/addon-interactions@npm:^7.0.7":
   version: 7.0.7
   resolution: "@storybook/addon-interactions@npm:7.0.7"
   dependencies:
@@ -3018,7 +3018,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-links@npm:^7.0.2":
+"@storybook/addon-links@npm:^7.0.7":
   version: 7.0.7
   resolution: "@storybook/addon-links@npm:7.0.7"
   dependencies:
@@ -3137,7 +3137,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addons@npm:7.0.7, @storybook/addons@npm:^7.0.2":
+"@storybook/addons@npm:7.0.7, @storybook/addons@npm:^7.0.7":
   version: 7.0.7
   resolution: "@storybook/addons@npm:7.0.7"
   dependencies:
@@ -3169,7 +3169,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/blocks@npm:7.0.7, @storybook/blocks@npm:^7.0.2":
+"@storybook/blocks@npm:7.0.7, @storybook/blocks@npm:^7.0.7":
   version: 7.0.7
   resolution: "@storybook/blocks@npm:7.0.7"
   dependencies:
@@ -3658,7 +3658,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/nextjs@npm:^7.0.6":
+"@storybook/nextjs@npm:^7.0.7":
   version: 7.0.7
   resolution: "@storybook/nextjs@npm:7.0.7"
   dependencies:
@@ -3830,7 +3830,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react@npm:7.0.7, @storybook/react@npm:^7.0.6":
+"@storybook/react@npm:7.0.7, @storybook/react@npm:^7.0.7":
   version: 7.0.7
   resolution: "@storybook/react@npm:7.0.7"
   dependencies:
@@ -14700,7 +14700,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook@npm:^7.0.2":
+"storybook@npm:^7.0.7":
   version: 7.0.7
   resolution: "storybook@npm:7.0.7"
   dependencies:
@@ -15947,13 +15947,13 @@ __metadata:
     "@hookform/resolvers": ^3.1.0
     "@prisma/client": ^4.13.0
     "@react-hook/window-size": ^3.1.1
-    "@storybook/addon-essentials": ^7.0.2
-    "@storybook/addon-interactions": ^7.0.2
-    "@storybook/addon-links": ^7.0.2
-    "@storybook/addons": ^7.0.2
-    "@storybook/blocks": ^7.0.2
-    "@storybook/nextjs": ^7.0.6
-    "@storybook/react": ^7.0.6
+    "@storybook/addon-essentials": ^7.0.7
+    "@storybook/addon-interactions": ^7.0.7
+    "@storybook/addon-links": ^7.0.7
+    "@storybook/addons": ^7.0.7
+    "@storybook/blocks": ^7.0.7
+    "@storybook/nextjs": ^7.0.7
+    "@storybook/react": ^7.0.7
     "@storybook/test-runner": ^0.10.0
     "@storybook/testing-library": ^0.1.0
     "@supabase/supabase-js": ^2.21.0
@@ -15977,7 +15977,7 @@ __metadata:
     react: 18.2.0
     react-dom: 18.2.0
     react-hook-form: ^7.43.9
-    storybook: ^7.0.2
+    storybook: ^7.0.7
     tailwindcss: 3.3.1
     ts-jest: ^29.1.0
     ts-node: ^10.9.1
