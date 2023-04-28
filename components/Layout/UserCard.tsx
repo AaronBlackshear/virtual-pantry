@@ -1,7 +1,7 @@
-import { Avatar } from '@/components/Avatar';
+import { Avatar, AvatarProps } from '@/components/Avatar';
 import { Dropdown } from '@/components/Dropdown';
 import { Icon } from '@/components/Icon';
-import { useLayoutContext } from '@/components/Layout';
+import { useLayoutContext } from '@/components/Layout/LayoutContext';
 import { getLogoutUrl } from '@/lib/urls_app';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import classNames from 'classnames';
@@ -12,10 +12,10 @@ const MAX_CHAR_LENGTH = 22;
 
 export function UserCard() {
   const { user, isLoading } = useUser();
+  const { sidebarOpen } = useLayoutContext()
+
   if (isLoading) return <LoadinguserCard />
   if (!user) throw new Error('Missing user');
-
-  const { sidebarOpen } = useLayoutContext()
 
   const name = user?.name || user?.nickname
 
@@ -52,19 +52,19 @@ export function UserCard() {
   )
 }
 
-function UserIcon() {
+export function UserIcon({ size = 'sm' }: { size?: AvatarProps['size'] }) {
   const { user } = useUser();
 
   const name = user?.name || user?.nickname
   const userInitials = name ? getUserInitials(name) : null;
 
   if (user?.picture)
-    return <Avatar size="sm" style="square" variant="image" image={user.picture} />
+    return <Avatar size={size} style="square" variant="image" image={user.picture} />
 
   if (userInitials)
-    return <Avatar size="sm" style="square" variant={'initials'} initials={userInitials} />
+    return <Avatar size={size} style="square" variant={'initials'} initials={userInitials} />
 
-  return <Avatar size="sm" style="square" variant={'icon'} />
+  return <Avatar size={size} style="square" variant={'icon'} />
 }
 
 function LoadinguserCard() {

@@ -5,7 +5,8 @@ export type IconType =
   'documentText' |
   'listBullet' |
   'book' |
-  'cog';
+  'cog' |
+  'threeLines';
 
 export type IconSizes = 'sm' | 'md' | 'lg';
 
@@ -68,5 +69,9 @@ function getIconContent(type: IconType): JSX.Element {
           <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
         </>
       )
+
+    case 'threeLines':
+      return <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+
   }
 }

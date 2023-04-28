@@ -12,8 +12,7 @@ interface Props {
 }
 
 export function LayoutProvider({ children }: Props) {
-  const [sidebarOpen, setSidebarOpen] = useState<boolean>(true);
-
+  const [sidebarOpen, setSidebarOpen] = useState<boolean>(false);
 
   return (
     <LayoutContext.Provider value={{
