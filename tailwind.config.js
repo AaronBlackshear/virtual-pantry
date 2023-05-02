@@ -8,6 +8,10 @@ module.exports = {
   theme: {
     extend: {
       dropShadow: {
+        '8dp': [
+          '0 4px 8px rgba(0, 0, 0, 0.08)',
+          '0 4px 32px rgba(0, 0, 0, 0.08)',
+        ],
         '16dp': [
           '0 8px 12px rgba(0, 0, 0, 0.08)',
           '0 4px 48px rgba(0, 0, 0, 0.08)',

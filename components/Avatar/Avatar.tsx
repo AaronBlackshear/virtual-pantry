@@ -5,7 +5,7 @@ import Image from 'next/image';
 type AvatarSizes = 'sm' | 'md' | 'lg';
 type AvatarStyles = 'square' | 'circle';
 type AvatarVariants = 'icon' | 'image' | 'initials';
-type AvatarThemes = 'blue';
+type AvatarThemes = 'blue' | 'green' | 'pink';
 
 export interface AvatarProps {
   size: AvatarSizes;
@@ -76,6 +76,12 @@ function getSizeClasses(size: AvatarSizes): string {
 function getThemeClasses(theme: AvatarThemes, variant: AvatarVariants): string {
   switch (theme) {
     case 'blue':
-      return variant === 'icon' ? 'bg-blue-7 text-white' : 'bg-blue-9 text-blue-3';
+      return variant === 'icon' ? 'bg-blue-7 text-white' : 'bg-blue-11 text-blue-3';
+
+    case 'green':
+      return variant === 'icon' ? 'bg-green-7 text-white' : 'bg-green-11 text-green-1';
+
+    case 'pink':
+      return variant === 'icon' ? 'bg-pink-7 text-white' : 'bg-pink-11 text-pink-3';
   }
 }
