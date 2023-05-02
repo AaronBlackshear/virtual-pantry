@@ -1,18 +1,23 @@
+import { Calendar } from "@/components/Calendar";
 import { Tab } from "@headlessui/react";
 
 export function MealPlansPage() {
   return (
-    <Tab.Group>
-      <Tab.List className="mb-6">
-        <TabButton>Calendar View</TabButton>
-        <TabButton>List View</TabButton>
-      </Tab.List>
+    <div className="flex flex-col h-full">
+      <Tab.Group>
+        <Tab.List className="mb-6">
+          <TabButton>Calendar View</TabButton>
+          <TabButton>List View</TabButton>
+        </Tab.List>
 
-      <Tab.Panels>
-        <Tab.Panel>Calendar content</Tab.Panel>
-        <Tab.Panel>List content</Tab.Panel>
-      </Tab.Panels>
-    </Tab.Group>
+        <Tab.Panels className="flex-1 h-full">
+          <Tab.Panel className="h-full">
+            <Calendar />
+          </Tab.Panel>
+          <Tab.Panel>List content</Tab.Panel>
+        </Tab.Panels>
+      </Tab.Group>
+    </div>
   )
 }
 
