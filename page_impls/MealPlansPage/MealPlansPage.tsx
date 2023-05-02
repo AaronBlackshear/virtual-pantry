@@ -1,4 +1,5 @@
 import { Calendar } from "@/components/Calendar";
+import { MealPlanList } from "@/page_impls/MealPlansPage/MealPlanList";
 import { Tab } from "@headlessui/react";
 
 export function MealPlansPage() {
@@ -14,7 +15,9 @@ export function MealPlansPage() {
           <Tab.Panel className="h-full">
             <Calendar />
           </Tab.Panel>
-          <Tab.Panel>List content</Tab.Panel>
+          <Tab.Panel className="h-full">
+            <MealPlanList />
+          </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>
     </div>
