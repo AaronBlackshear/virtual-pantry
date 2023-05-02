@@ -134,7 +134,7 @@ function NColumns({ activeDate, daysInRange }: NColumnsProps) {
     <>
       <CalendarColumn date={activeDate} />
       {Array.from(Array(daysInRange - 1)).map((_, ind) => (
-        <CalendarColumn date={getTime(addDays(activeDate, ind + 1))} />
+        <CalendarColumn key={ind} date={getTime(addDays(activeDate, ind + 1))} />
       ))}
     </>
   )
