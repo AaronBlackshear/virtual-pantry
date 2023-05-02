@@ -1,7 +1,6 @@
 import { Icon, IconType } from '@/components/Icon'
 import { useLayoutContext } from '@/components/Layout/LayoutContext'
 import { UserCard } from '@/components/Layout/UserCard'
-import { useWindowWidth } from '@/hooks/useWindowWidth'
 import classNames from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -10,13 +9,12 @@ import { UrlObject } from 'url'
 
 export function Sidebar() {
   const { sidebarOpen, setSidebarOpen } = useLayoutContext()
-  const { isMobile } = useWindowWidth();
 
   return (
     <aside className={classNames(
       "bg-white rounded-tr-2xl rounded-br-2xl flex flex-col justify-between p-6 pt-8 transition-[width] h-screen",
-      sidebarOpen ? "w-72" : "w-24",
-      isMobile ? "w-screen max-w-sm" : ""
+      "w-screen max-w-sm xl:w-auto xl:max-w-none",
+      sidebarOpen ? "xl:w-72" : "xl:w-24",
     )}>
       <section className="space-y-6">
         <div className={classNames("flex items-center", sidebarOpen ? "justify-between" : "justify-center")}>
