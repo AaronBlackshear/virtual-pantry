@@ -1,19 +1,25 @@
 import { Icon, IconType } from '@/components/Icon'
 import { useLayoutContext } from '@/components/Layout/LayoutContext'
 import { UserCard } from '@/components/Layout/UserCard'
+import { getMealPlansUrl } from '@/lib/urls_app'
 import classNames from 'classnames'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import React from 'react'
 import { UrlObject } from 'url'
 
 export function Sidebar() {
+  const router = useRouter();
+
   const { sidebarOpen, setSidebarOpen } = useLayoutContext()
+
+  const basePathname = getBasePathname(router.pathname)
 
   return (
     <aside className={classNames(
       "bg-white rounded-tr-2xl rounded-br-2xl flex flex-col justify-between p-6 pt-8 transition-[width] h-screen",
-      "w-screen max-w-sm xl:w-auto xl:max-w-none",
+      "w-screen max-w-sm xl:max-w-none",
       sidebarOpen ? "xl:w-72" : "xl:w-24",
     )}>
       <section className="space-y-6">
@@ -30,7 +36,7 @@ export function Sidebar() {
         </div>
 
         <ul className="space-y-2">
-          <NavLink iconType="documentText" href="#" active>Meal Plans</NavLink>
+          <NavLink iconType="documentText" href={getMealPlansUrl()} active={basePathname === getMealPlansUrl()}>Meal Plans</NavLink>
           <NavLink iconType="listBullet" href="#">Grocery Lists</NavLink>
           <NavLink iconType="book" href="#">Recipes</NavLink>
         </ul>
@@ -41,6 +47,10 @@ export function Sidebar() {
       </section>
     </aside>
   )
+}
+
+function getBasePathname(pathname: string): string {
+  return `/${pathname.replace("/", "").split('/')[0]}`
 }
 
 

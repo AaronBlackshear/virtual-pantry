@@ -1,11 +1,17 @@
+import { getMealPlansUrl } from '@/lib/urls_app';
 import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 
 export default function Home() {
-  return (
-    <div>
-      <h1 className="title-3">Index Page</h1>
-    </div>
-  )
+  return null;
 }
 
-export const getServerSideProps = withPageAuthRequired();
+export const getServerSideProps = withPageAuthRequired({
+  async getServerSideProps() {
+    return {
+      redirect: {
+        permanent: true,
+        destination: getMealPlansUrl()
+      }
+    };
+  }
+});
