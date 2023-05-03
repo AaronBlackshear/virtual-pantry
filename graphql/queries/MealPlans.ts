@@ -28,7 +28,7 @@ export const AllMealPlansQuery = gql`
               ingredients {
                 id
                 amount
-                ingredientMeasurment {
+                ingredientMeasurement {
                   singularMeasurement
                   pluralMeasurement
                 }
