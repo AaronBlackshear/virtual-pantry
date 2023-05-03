@@ -1,6 +1,6 @@
 import { builder } from "@/graphql/builder";
 
-builder.prismaObject('ingredientMeasurement', {
+builder.prismaObject('IngredientMeasurement', {
   fields: (t) => ({
     id: t.exposeID('id'),
     createdAt: t.expose("createdAt", {
