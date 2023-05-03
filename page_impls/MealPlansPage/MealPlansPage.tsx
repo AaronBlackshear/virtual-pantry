@@ -1,8 +1,16 @@
 import { Calendar } from "@/components/Calendar";
+import { AllMealPlansQuery } from "@/graphql/queries/MealPlans";
 import { MealPlanList } from "@/page_impls/MealPlansPage/MealPlanList";
+import { useQuery } from '@apollo/client';
 import { Tab } from "@headlessui/react";
 
 export function MealPlansPage() {
+  const { data } = useQuery(AllMealPlansQuery, {
+    variables: { first: 1 }
+  });
+
+  console.log({ data });
+
   return (
     <div className="flex flex-col h-full">
       <Tab.Group>

@@ -18,7 +18,7 @@ export function Sidebar() {
 
   return (
     <aside className={classNames(
-      "bg-white rounded-tr-2xl rounded-br-2xl flex flex-col justify-between p-6 pt-8 transition-[width] h-screen",
+      "bg-white rounded-tr-2xl rounded-br-2xl flex flex-col justify-between p-6 pt-8 transition-[width] h-screen drop-shadow-24dp xl:drop-shadow-none",
       "w-screen max-w-sm xl:max-w-none",
       sidebarOpen ? "xl:w-72" : "xl:w-24",
     )}>
