@@ -30,6 +30,7 @@ async function main() {
             mealCategory: 'Dinner',
             recipe: {
               create: {
+                userId: user.id,
                 title: "Chicken Fried Steak with Mashed Potatoes",
                 servings: 2,
                 prepTime: 15,
@@ -46,13 +47,15 @@ async function main() {
                     amount: 2,
                     ingredient: {
                       create: {
-                        name: 'Flour'
+                        name: 'Flour',
+                        userId: user.id,
                       }
                     },
                     ingredientMeasurement: {
                       create: {
                         singularMeasurement: 'cup',
                         pluralMeasurement: 'cups',
+                        userId: user.id,
                       }
                     }
                   }
