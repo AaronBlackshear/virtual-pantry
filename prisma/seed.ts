@@ -49,7 +49,7 @@ async function main() {
                         name: 'Flour'
                       }
                     },
-                    ingredientMeasurment: {
+                    ingredientMeasurement: {
                       create: {
                         singularMeasurement: 'cup',
                         pluralMeasurement: 'cups',

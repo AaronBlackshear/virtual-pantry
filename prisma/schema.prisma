@@ -72,16 +72,16 @@ model Recipe {
 }
 
 model RecipeIngredient {
-  id                     Int                   @id @default(autoincrement())
-  createdAt              DateTime              @default(now())
-  updatedAt              DateTime              @updatedAt
-  recipe                 Recipe                @relation(fields: [recipeId], references: [id])
-  recipeId               Int
-  ingredient             Ingredient            @relation(fields: [ingredientId], references: [id])
-  ingredientId           Int
-  amount                 Int
-  ingredientMeasurment   IngredientMeasurment? @relation(fields: [ingredientMeasurmentId], references: [id])
-  ingredientMeasurmentId Int?
+  id                      Int                    @id @default(autoincrement())
+  createdAt               DateTime               @default(now())
+  updatedAt               DateTime               @updatedAt
+  recipe                  Recipe                 @relation(fields: [recipeId], references: [id])
+  recipeId                Int
+  ingredient              Ingredient             @relation(fields: [ingredientId], references: [id])
+  ingredientId            Int
+  amount                  Int
+  ingredientMeasurement   IngredientMeasurement? @relation(fields: [ingredientMeasurementId], references: [id])
+  ingredientMeasurementId Int?
 }
 
 model Ingredient {
@@ -92,7 +92,7 @@ model Ingredient {
   recipeIngredient RecipeIngredient[]
 }
 
-model IngredientMeasurment {
+model IngredientMeasurement {
   id                  Int                @id @default(autoincrement())
   createdAt           DateTime           @default(now())
   updatedAt           DateTime           @updatedAt

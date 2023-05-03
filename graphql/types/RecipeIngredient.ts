@@ -14,6 +14,6 @@ builder.prismaObject('RecipeIngredient', {
     ingredient: t.relation('ingredient'),
     ingredientId: t.exposeID('ingredientId'),
     amount: t.exposeInt('amount'),
-    ingredientMeasurment: t.relation('ingredientMeasurment'),
+    ingredientMeasurement: t.relation('ingredientMeasurement'),
   })
 })
