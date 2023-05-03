@@ -9,8 +9,6 @@ export function MealPlansPage() {
     variables: { first: 1 }
   });
 
-  console.log({ data });
-
   return (
     <div className="flex flex-col h-full">
       <Tab.Group>
