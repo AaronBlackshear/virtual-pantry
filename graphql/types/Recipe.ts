@@ -9,15 +9,16 @@ builder.prismaObject('Recipe', {
     updatedAt: t.expose("createdAt", {
       type: "Date",
     }),
-    meal: t.relation('meal'),
-    mealId: t.exposeID('mealId'),
     image: t.expose('image', { nullable: true, type: 'String' }),
-    title: t.exposeString('title'),
+    name: t.exposeString('name'),
     servings: t.exposeInt('servings'),
     prepTime: t.exposeInt('prepTime'),
     cookTime: t.exposeInt('cookTime'),
     ingredients: t.relation('ingredients'),
     directions: t.exposeStringList('directions'),
-    note: t.expose('note', { nullable: true, type: 'String' })
+    note: t.expose('note', { nullable: true, type: 'String' }),
+    user: t.relation('user'),
+    userId: t.exposeID('userId'),
+    mealPlanItems: t.relation('mealPlanItems'),
   })
 })

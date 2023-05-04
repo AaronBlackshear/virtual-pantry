@@ -8,6 +8,11 @@ builder.prismaObject('User', {
     firstName: t.exposeString('firstName', { nullable: true, }),
     lastName: t.exposeString('lastName', { nullable: true, }),
     role: t.expose('role', { type: Role, }),
+    mealPlans: t.relation('mealPlans'),
+    meals: t.relation('meals'),
+    recipes: t.relation('recipes'),
+    ingredients: t.relation('ingredients'),
+    mealCategories: t.relation('mealCategories'),
   })
 })
 

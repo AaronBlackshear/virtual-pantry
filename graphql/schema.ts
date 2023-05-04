@@ -1,6 +1,5 @@
 import { builder } from "@/graphql/builder";
 import "@/graphql/types/Ingredient";
-import "@/graphql/types/IngredientMeasurements";
 import "@/graphql/types/Meal";
 import "@/graphql/types/MealPlan";
 import "@/graphql/types/Recipe";
