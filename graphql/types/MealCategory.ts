@@ -10,7 +10,7 @@ builder.prismaObject('MealCategory', {
       type: "Date",
     }),
     name: t.exposeString('name'),
-    them: t.exposeString('theme'),
+    theme: t.exposeString('theme'),
     order: t.exposeInt('order'),
     user: t.relation('user'),
     userId: t.exposeID('userId'),

@@ -10,6 +10,8 @@ builder.prismaObject('Ingredient', {
       type: "Date",
     }),
     name: t.exposeString('name'),
-    recipeIngredient: t.relation('recipeIngredients'),
+    recipeIngredients: t.relation('recipeIngredients'),
+    user: t.relation('user'),
+    userId: t.exposeID('userId'),
   })
 })

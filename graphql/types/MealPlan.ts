@@ -15,8 +15,9 @@ builder.prismaObject('MealPlan', {
     endDate: t.expose("createdAt", {
       type: "Date",
     }),
-    meals: t.relation('mealPlanItems'),
+    mealPlanItems: t.relation('mealPlanItems'),
     user: t.relation('user'),
+    userId: t.exposeID('userId'),
   })
 })
 
