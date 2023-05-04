@@ -105,3 +105,36 @@ input[type=number].appearance-none {
 .image-placeholder>div>svg {
   @apply w-16 h-16;
 }
+
+.react-datepicker__aria-live {
+  @apply absolute h-0 w-0 overflow-hidden whitespace-nowrap;
+}
+
+#custom-calendar .react-datepicker__header--custom {
+  @apply bg-white py-0;
+}
+
+#custom-calendar .react-datepicker__day-name {
+  @apply w-10 h-10 inline-flex justify-center items-center caption text-gray-7;
+}
+
+#custom-calendar .custom-day {
+  @apply inline-block;
+}
+
+#custom-calendar .custom-day:focus-visible {
+  @apply outline-none;
+}
+
+#custom-calendar .custom-day.react-datepicker__day--selected>div,
+#custom-calendar .custom-day:hover>div {
+  @apply bg-blue-3 text-white outline-none;
+}
+
+#custom-calendar .custom-day.react-datepicker__day--keyboard-selected>div {
+  @apply bg-blue-8 text-gray-3 ring-0 outline-none;
+}
+
+#custom-calendar .custom-day:hover>div {
+  @apply cursor-pointer
+}
