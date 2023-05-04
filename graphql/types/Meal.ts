@@ -9,10 +9,9 @@ builder.prismaObject('Meal', {
     updatedAt: t.expose("createdAt", {
       type: "Date",
     }),
-    title: t.exposeString("title", { nullable: true }),
-    mealCategory: t.exposeString("mealCategory", { nullable: true }),
-    mealPlan: t.relation('mealPlan'),
-    recipe: t.relation('recipe', { nullable: true }),
+    image: t.exposeString("image", { nullable: true }),
+    name: t.exposeString("name", { nullable: false }),
     user: t.relation('user'),
+    mealPlan: t.relation('mealPlanItems'),
   })
 })

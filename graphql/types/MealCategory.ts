@@ -1,6 +1,6 @@
 import { builder } from "@/graphql/builder";
 
-builder.prismaObject('Ingredient', {
+builder.prismaObject('MealCategory', {
   fields: (t) => ({
     id: t.exposeID('id'),
     createdAt: t.expose("createdAt", {
@@ -10,6 +10,10 @@ builder.prismaObject('Ingredient', {
       type: "Date",
     }),
     name: t.exposeString('name'),
-    recipeIngredient: t.relation('recipeIngredients'),
+    them: t.exposeString('theme'),
+    order: t.exposeInt('order'),
+    user: t.relation('user'),
+    userId: t.exposeID('userId'),
+    mealPlanItems: t.relation('mealPlanItems'),
   })
 })
