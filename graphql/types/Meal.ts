@@ -12,6 +12,7 @@ builder.prismaObject('Meal', {
     image: t.exposeString("image", { nullable: true }),
     name: t.exposeString("name", { nullable: false }),
     user: t.relation('user'),
-    mealPlan: t.relation('mealPlanItems'),
+    userId: t.expose('userId', { nullable: true, type: 'ID' }),
+    mealPlanItems: t.relation('mealPlanItems'),
   })
 })
