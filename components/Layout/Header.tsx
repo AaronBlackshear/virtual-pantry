@@ -11,7 +11,7 @@ export function Header() {
   return (
     <header className="w-screen p-2 bg-white fixed top-0 left-0 flex justify-between items-center">
       <button onClick={() => setSidebarOpen(!sidebarOpen)}>
-        <Icon type="threeLines" size="lg" />
+        <Icon type="bars3" size="lg" />
       </button>
 
       <Link href="/">
