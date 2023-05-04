@@ -21,6 +21,7 @@ const config: StorybookConfig = {
       ...config.resolve.alias,
       "@/styles": path.resolve(__dirname, "../styles"),
       "@/components": path.resolve(__dirname, "../components"),
+      "@/lib": path.resolve(__dirname, "../lib"),
     };
 
     // @ts-ignore

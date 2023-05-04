@@ -3,7 +3,7 @@ import { Nullable } from '@/lib/types';
 import classNames from 'classnames';
 import React from 'react';
 
-type Props = {
+export type InputProps = {
   label: string;
   type?: 'text' | 'number' | 'email';
   helperText?: string;
@@ -13,9 +13,9 @@ type Props = {
   fullWidth?: boolean;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
-export function Input({ label, type = 'text', helperText, state, iconLeft, iconRight, fullWidth = false, ...props }: Props) {
+export function Input({ label, type = 'text', helperText, state, iconLeft, iconRight, fullWidth = false, ...props }: InputProps) {
   const sharedIconClasses = classNames(
-    "absolute top-4 text-gray-1 peer-disabled:text-gray-10",
+    "absolute top-5 text-gray-1 peer-disabled:text-gray-10",
     state === 'success' && "text-green-1",
     state === 'error' && "text-red-3",
   )
@@ -30,8 +30,8 @@ export function Input({ label, type = 'text', helperText, state, iconLeft, iconR
           "peer h-14 button-md w-full text-gray-2 px-4 pt-6 pb-1.5 bg-white border rounded-2xl overflow-hidden placeholder-transparent transition-all appearance-none",
           "border-[#f1f1f1] focus:border-blue-3 focus:outline outline-blue-3 outline-1",
           "hover:border-blue-3",
-          !!iconLeft ? 'pl-12' : 'pl-4',
-          !!iconRight ? 'pr-12' : 'pr-4',
+          !!iconLeft ? 'pl-11' : 'pl-4',
+          !!iconRight ? 'pr-11' : 'pr-4',
           state === 'success' && "text-green-1 border-green-1",
           state === 'error' && "text-red-3 border-red-3",
           "disabled:bg-gray-12 disabled:text-gray-8 disabled:border-[#f1f1f1]"
@@ -40,20 +40,20 @@ export function Input({ label, type = 'text', helperText, state, iconLeft, iconR
         <p className={classNames(
           "absolute body-small text-gray-8 top-2.5 transition-all",
           "peer-placeholder-shown:top-5 peer-focus:top-2.5",
-          !!iconLeft ? 'left-12' : 'left-4',
+          !!iconLeft ? 'left-11' : 'left-4',
         )}>
           {label}
         </p>
 
         {iconLeft && (
-          <div className={`${sharedIconClasses} left-3`}>
-            <Icon type={iconLeft} size="md" />
+          <div className={`${sharedIconClasses} left-4`}>
+            <Icon type={iconLeft} size="sm" />
           </div>
         )}
 
         {iconRight && (
-          <div className={`${sharedIconClasses} right-3`}>
-            <Icon type={iconRight} size="md" />
+          <div className={`${sharedIconClasses} right-4`}>
+            <Icon type={iconRight} size="sm" />
           </div>
         )}
       </label>

@@ -4,7 +4,9 @@ import {
   ArrowRightIcon,
   Bars3Icon,
   BookOpenIcon,
+  CalendarIcon,
   ChevronDownIcon,
+  ChevronUpIcon,
   CogIcon,
   DocumentTextIcon,
   EllipsisHorizontalIcon,
@@ -25,7 +27,9 @@ export type IconType =
   'bars3' |
   'chevronDown' |
   'arrowLeft' |
-  'arrowRight';
+  'arrowRight' |
+  'calendar' |
+  'chevronUp';
 
 export type IconSizes = 'sm' | 'md' | 'lg';
 
@@ -93,5 +97,10 @@ function getIcon(type: IconType): HeroIconType {
     case 'arrowRight':
       return ArrowRightIcon;
 
+    case 'calendar':
+      return CalendarIcon;
+
+    case 'chevronUp':
+      return ChevronUpIcon;
   }
 }

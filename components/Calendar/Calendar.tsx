@@ -1,7 +1,7 @@
 import { Button } from '@/components/Button';
 import { CalendarEvent } from '@/components/Calendar/CalendarEvent';
-import { CALENDAR_COLUMN_DATE_FORMAT, CALENDAR_TITLE_FORMAT } from '@/components/Calendar/utils';
 import { ButtonSelect } from '@/components/Select';
+import { CALENDAR_COLUMN_DATE_FORMAT, CALENDAR_TITLE_FORMAT } from '@/lib/date_formats';
 import { useWindowWidth } from '@react-hook/window-size';
 import classNames from 'classnames';
 import addDays from 'date-fns/addDays';
