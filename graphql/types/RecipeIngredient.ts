@@ -9,11 +9,11 @@ builder.prismaObject('RecipeIngredient', {
     updatedAt: t.expose("createdAt", {
       type: "Date",
     }),
-    recipe: t.relation('recipe'),
-    recipeId: t.exposeID('recipeId'),
+    amount: t.exposeInt('amount'),
+    ingredientMeasurement: t.exposeString('ingredientMeasurement'),
     ingredient: t.relation('ingredient'),
     ingredientId: t.exposeID('ingredientId'),
-    amount: t.exposeInt('amount'),
-    ingredientMeasurement: t.relation('ingredientMeasurement'),
+    recipe: t.relation('recipe'),
+    recipeId: t.exposeID('recipeId'),
   })
 })
