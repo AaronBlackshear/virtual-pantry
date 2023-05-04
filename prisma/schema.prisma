@@ -15,19 +15,19 @@ generator pothos {
 }
 
 model User {
-  id                     Int                     @id @default(autoincrement())
-  createdAt              DateTime                @default(now())
-  updatedAt              DateTime                @updatedAt
-  email                  String                  @unique
-  firstName              String
-  lastName               String
-  image                  String?
-  role                   Role                    @default(USER)
-  mealPlans              MealPlan[]
-  meals                  Meal[]
-  recipes                Recipe[]
-  ingredients            Ingredient[]
-  ingredientMeasurements IngredientMeasurement[]
+  id           Int            @id @default(autoincrement())
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  email        String         @unique
+  firstName    String
+  lastName     String
+  image        String?
+  role         Role           @default(USER)
+  mealPlans    MealPlan[]
+  meals        Meal[]
+  recipes      Recipe[]
+  ingredients  Ingredient[]
+  mealCategory MealCategory[]
 }
 
 enum Role {
@@ -36,76 +36,88 @@ enum Role {
 }
 
 model MealPlan {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  startDate DateTime
-  endDate   DateTime
-  meals     Meal[]
-  user      User     @relation(fields: [userId], references: [id])
-  userId    Int
+  id            Int            @id @default(autoincrement())
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  startDate     DateTime
+  endDate       DateTime
+  mealPlanItems MealPlanItem[]
+  user          User           @relation(fields: [userId], references: [id])
+  userId        Int
+}
+
+model MealPlanItem {
+  id             Int           @id @default(autoincrement())
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  itemDate       DateTime
+  mealCategory   MealCategory? @relation(fields: [mealCategoryId], references: [id])
+  mealCategoryId Int?
+  meal           Meal?         @relation(fields: [mealId], references: [id])
+  mealId         Int?
+  recipe         Recipe?       @relation(fields: [recipeId], references: [id])
+  recipeId       Int?
+  mealPlan       MealPlan      @relation(fields: [mealPlanId], references: [id])
+  mealPlanId     Int
 }
 
 model Meal {
-  id           Int        @id @default(autoincrement())
-  createdAt    DateTime   @default(now())
-  updatedAt    DateTime   @updatedAt
-  title        String?
-  mealCategory String?
-  mealPlan     MealPlan[]
-  recipe       Recipe?
-  user         User       @relation(fields: [userId], references: [id])
-  userId       Int
+  id             Int            @id @default(autoincrement())
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+  title          String
+  user           User           @relation(fields: [userId], references: [id])
+  userId         Int
+  mealPlanItem   MealPlanItem[]
+  mealCategoryId Int?
 }
 
 model Recipe {
-  id          Int                @id @default(autoincrement())
-  createdAt   DateTime           @default(now())
-  updatedAt   DateTime           @updatedAt
-  meal        Meal               @relation(fields: [mealId], references: [id])
-  mealId      Int                @unique
-  image       String?
-  title       String
-  servings    Int
-  prepTime    Int
-  cookTime    Int
-  ingredients RecipeIngredient[]
-  directions  String[]
-  note        String?
-  user        User               @relation(fields: [userId], references: [id])
-  userId      Int
+  id           Int                @id @default(autoincrement())
+  createdAt    DateTime           @default(now())
+  updatedAt    DateTime           @updatedAt
+  image        String?
+  title        String
+  servings     Int
+  prepTime     Int
+  cookTime     Int
+  ingredients  RecipeIngredient[]
+  directions   String[]
+  note         String?
+  user         User               @relation(fields: [userId], references: [id])
+  userId       Int
+  mealPlanItem MealPlanItem[]
+}
+
+model MealCategory {
+  id           Int            @id @default(autoincrement())
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  name         String
+  theme        String
+  user         User           @relation(fields: [userId], references: [id])
+  userId       Int
+  mealPlanItem MealPlanItem[]
 }
 
 model RecipeIngredient {
-  id                      Int                    @id @default(autoincrement())
-  createdAt               DateTime               @default(now())
-  updatedAt               DateTime               @updatedAt
-  recipe                  Recipe                 @relation(fields: [recipeId], references: [id])
-  recipeId                Int
-  ingredient              Ingredient             @relation(fields: [ingredientId], references: [id])
-  ingredientId            Int
-  amount                  Int
-  ingredientMeasurement   IngredientMeasurement? @relation(fields: [ingredientMeasurementId], references: [id])
-  ingredientMeasurementId Int?
+  id                    Int        @id @default(autoincrement())
+  createdAt             DateTime   @default(now())
+  updatedAt             DateTime   @updatedAt
+  amount                Int
+  ingredientMeasurement String
+  ingredient            Ingredient @relation(fields: [ingredientId], references: [id])
+  ingredientId          Int
+  recipe                Recipe     @relation(fields: [recipeId], references: [id])
+  recipeId              Int
 }
 
 model Ingredient {
-  id               Int                @id @default(autoincrement())
-  createdAt        DateTime           @default(now())
-  updatedAt        DateTime           @updatedAt
-  name             String
-  recipeIngredient RecipeIngredient[]
-  user             User               @relation(fields: [userId], references: [id])
-  userId           Int
-}
-
-model IngredientMeasurement {
-  id                  Int                @id @default(autoincrement())
-  createdAt           DateTime           @default(now())
-  updatedAt           DateTime           @updatedAt
-  singularMeasurement String             @unique
-  pluralMeasurement   String             @unique
-  recipeIngredient    RecipeIngredient[]
-  user                User               @relation(fields: [userId], references: [id])
-  userId              Int
+  id                Int                @id @default(autoincrement())
+  createdAt         DateTime           @default(now())
+  updatedAt         DateTime           @updatedAt
+  name              String
+  recipeIngredients RecipeIngredient[]
+  user              User               @relation(fields: [userId], references: [id])
+  userId            Int
 }
