@@ -22,5 +22,6 @@ type Story = StoryObj<typeof DatePicker>;
 export const Primary: Story = {
   args: {
     label: "Meal date",
+    initialDate: new Date('2023-06-30')
   },
 };

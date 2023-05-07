@@ -84,7 +84,7 @@ function NavLink({ children, iconType, href, active = false }: NavLinkProps) {
         </span>
         <span
           className={classNames(
-            "body-small-bold whitespace-nowrap transition-all",
+            "text-body-small-bold whitespace-nowrap transition-all",
             active ? "text-blue-5 group-hover:text-blue-3 group-focus:text-blue-3" : "text-gray-3",
             sidebarOpen ? 'opacity-100 w-full' : 'opacity-0 w-0'
           )}
