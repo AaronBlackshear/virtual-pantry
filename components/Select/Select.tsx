@@ -1,81 +1,26 @@
-import { InputProps, getSharedIconClasses, getSharedInputClasses } from '@/components/Input';
-import { Nullable } from '@/lib/types';
+import { Input, InputProps } from '@/components/Input';
 import { Combobox } from '@headlessui/react';
 import classNames from 'classnames';
 import Image from 'next/image';
 import { Icon, IconType } from '../Icon';
 
-type InputState = 'error' | 'success';
-
-export interface SelectProps<T> extends React.InputHTMLAttributes<HTMLInputElement> {
-  children: React.ReactNode;
+export interface SelectProps<T> extends Omit<InputProps, "type"> {
   selectValue: T;
-  onSelectChange: (value: T) => void;
-  label: string;
-  type?: 'text' | 'number' | 'email';
-  helperText?: string;
-  state?: Nullable<InputState>
-  imageLeft?: Nullable<string>;
-  iconLeft?: IconType;
-  iconRight?: IconType;
-  fullWidth?: boolean;
+  onSelectChange: (val: T) => void;
 }
 
-export function Select<T>({ children, selectValue, onSelectChange, fullWidth, imageLeft, iconLeft, iconRight, state, label, ...props }: SelectProps<T>) {
-  const inputStyles = getSharedInputClasses({
-    paddingLeft: (!!(imageLeft || iconLeft) || imageLeft === null),
-    paddingRight: !!iconRight,
-    state,
-  });
-  const sharedIconClasses = getSharedIconClasses(state || null);
-
+export function Select<T>({ children, selectValue, onSelectChange, fullWidth, disabled, ...props }: SelectProps<T>) {
   return (
     <Combobox
       value={selectValue}
       onChange={onSelectChange}
+      disabled={disabled}
     >
-      <label className={classNames(
-        "block relative",
-        fullWidth ? "max-w-none" : "max-w-[320px]",
-      )}>
-        <Combobox.Input
-          {...props}
-          className={classNames(inputStyles)}
-          placeholder={label}
-        />
-
-        <p className={classNames(
-          "absolute body-small text-gray-8 top-2.5 transition-all",
-          "peer-placeholder-shown:top-5 peer-focus:top-2.5",
-          !!(iconLeft || imageLeft) ? 'left-11' : 'left-4',
-        )}>
-          {label}
-        </p>
-
-        {(imageLeft || imageLeft === null) && (
-          <div className={`${sharedIconClasses} left-4`}>
-            {imageLeft ? (
-              <Image src={imageLeft} alt="" width={32} height={32} />
-            ) : (
-              <div>
-                <Icon type="userCircle" size='md' />
-              </div>
-            )}
-          </div>
-        )}
-
-        {iconLeft && (
-          <div className={`${sharedIconClasses} left-4`}>
-            <Icon type={iconLeft} size="sm" />
-          </div>
-        )}
-
-        {iconRight && (
-          <div className={`${sharedIconClasses} right-4`}>
-            <Icon type={iconRight} size="sm" />
-          </div>
-        )}
-      </label>
+      <Combobox.Input
+        as={Input}
+        fullWidth={fullWidth}
+        {...props}
+      />
 
       <Combobox.Options className={classNames("p-4 rounded-2xl bg-white drop-shadow-16dp mt-2", fullWidth ? "max-w-none" : "max-w-[320px]")}>
         {children}

@@ -40,17 +40,16 @@ const SelectWithHooks = ({ ...args }: Omit<SelectProps<Nullable<MealCategory>>, 
   return (
     <Select
       {...args}
+      value={query || selected?.name}
       selectValue={selected}
-      onSelectChange={(val) => {
-        setSelected(val)
-        setQuery("");
-      }}
-      label="Meal category"
       onChange={(e) => {
         setSelected(null)
         setQuery(e.target.value)
       }}
-      value={query || selected?.name}
+      onSelectChange={(val) => {
+        setSelected(val)
+        setQuery("");
+      }}
     >
       {MEAL_CATEGORIES.map((mealCategory) => (
         <SelectOption
@@ -67,4 +66,7 @@ const SelectWithHooks = ({ ...args }: Omit<SelectProps<Nullable<MealCategory>>, 
 
 export const Primary: Story = {
   render: (args) => <SelectWithHooks {...args} />,
+  args: {
+    label: "Meal category"
+  }
 };
