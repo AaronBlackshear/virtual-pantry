@@ -29,7 +29,7 @@ export function Sidebar() {
           </Link>
 
           <button className="p-2 rounded-lg" onClick={() => setSidebarOpen(!sidebarOpen)}>
-            <div className={classNames("transition-transform transform duration-300 ease-in-out", sidebarOpen ? "rotate-0" : "rotate-180")}>
+            <div className={classNames("transition-transform transform duration-300 ease-in-out text-gray-1", sidebarOpen ? "rotate-0" : "rotate-180")}>
               <Icon type="arrowLeftOnRectangle" size="sm" />
             </div>
           </button>

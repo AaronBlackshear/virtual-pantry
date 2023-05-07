@@ -15,7 +15,6 @@ export function UserCard() {
   const { sidebarOpen } = useLayoutContext()
 
   if (isLoading) return <LoadinguserCard />
-  if (!user) throw new Error('Missing user');
 
   const name = user?.name || user?.nickname
 
@@ -40,7 +39,7 @@ export function UserCard() {
 
       <div
         className={classNames(
-          "transition-all",
+          "transition-all text-gray-1",
           sidebarOpen ? "w-auto opacity-100" : "w-0 opacity-0"
         )}
       >
@@ -73,7 +72,7 @@ function LoadinguserCard() {
       <Avatar size="sm" style="square" variant='icon' />
 
       <div className="flex-1">
-        <Skeleton count={2} />
+        Loadng...
       </div>
     </div>
   )
