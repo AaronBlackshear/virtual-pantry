@@ -36,7 +36,7 @@ interface TabButtonProps {
 
 function TabButton({ children }: TabButtonProps) {
   return (
-    <Tab className="px-3 py-4 pb-3 button-md text-gray-3 border-b-blue-3 border-b-0 transition-colors outline-none ui-selected:text-blue-3 ui-selected:border-b-[3px] hover:text-blue-3 focus:bg-gray-11">
+    <Tab className="px-3 py-4 pb-3 text-button-md text-gray-3 border-b-blue-3 border-b-0 transition-colors outline-none ui-selected:text-blue-3 ui-selected:border-b-[3px] hover:text-blue-3 focus:bg-gray-11">
       {children}
     </Tab>
   )

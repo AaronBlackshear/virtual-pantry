@@ -40,7 +40,7 @@ export function Calendar() {
   return (
     <div className="w-full h-full bg-white rounded-3xl drop-shadow-24dp p-4 sm:p-8 space-y-4 flex flex-col">
       <section className="flex flex-col sm:flex-row sm:justify-between gap-y-1 sm:gap-y-0">
-        <h3 className="headline">{format(activeDate, CALENDAR_TITLE_FORMAT)}</h3>
+        <h3 className="text-headline">{format(activeDate, CALENDAR_TITLE_FORMAT)}</h3>
 
         <div className="flex space-x-2">
           <ButtonSelect position={isMobileCalendar ? 'left' : 'right'} items={selectItems.map((range) => ({

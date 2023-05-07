@@ -11,7 +11,7 @@ export function CalendarEvent({ children, color }: Props) {
   const colorClasses = getColorClasses(color)
 
   return (
-    <div className={classNames("p-2 rounded-xl body-small", colorClasses)}>{children}</div>
+    <div className={classNames("p-2 rounded-xl text-body-small", colorClasses)}>{children}</div>
   )
 }
 

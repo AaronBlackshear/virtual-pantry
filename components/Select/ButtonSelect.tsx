@@ -36,7 +36,7 @@ export function ButtonSelect({ children, items, position = 'right' }: Props) {
               {...item}
               key={ind}
               as="button"
-              className={classNames("text-left p-3 block w-full text-gray-1 rounded-lg button-md ui-active:bg-blue-6 ui-active:text-white", item.active ? ' bg-gray-12' : 'bg-transparent')
+              className={classNames("text-left p-3 block w-full text-gray-1 rounded-lg text-button-md ui-active:bg-blue-6 ui-active:text-white", item.active ? ' bg-gray-12' : 'bg-transparent')
               }>
               {item.children}
             </Menu.Item>

@@ -52,13 +52,13 @@ function getVariantStyles(variant: ButtonVariant): string {
 function getSizeStyles(size: ButtonSize): string {
   switch (size) {
     case 'sm':
-      return 'p-2 button-sm';
+      return 'p-2 text-button-sm';
 
     case 'md':
-      return 'p-2 button-md'
+      return 'p-2 text-button-md'
 
     case 'lg':
-      return 'px-4 py-2 button-lg'
+      return 'px-4 py-2 text-button-lg'
   }
 }
 

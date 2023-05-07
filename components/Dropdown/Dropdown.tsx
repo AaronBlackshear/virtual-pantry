@@ -60,7 +60,7 @@ function getPostionStyles(position: DropdownPosition): string {
 
 function DropdownItem(item: DropdownItemType) {
   const { type, children } = item;
-  const sharedClasses = "p-3 block w-full text-gray-1 bg-transparent rounded-lg button-md ui-active:bg-blue-6 ui-active:text-white"
+  const sharedClasses = "p-3 block w-full text-gray-1 bg-transparent rounded-lg text-button-md ui-active:bg-blue-6 ui-active:text-white"
 
   switch (type) {
     case 'button':
