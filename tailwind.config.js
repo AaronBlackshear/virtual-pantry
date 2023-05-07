@@ -36,6 +36,7 @@ module.exports = {
       'button-sm': ['12px', {lineHeight: '16px', letterSpacing: '0.04em', fontWeight: '700'}],
     },
     colors: {
+      'transparent': 'transparent',
       'black': '#000000',
       'white': '#FFFFFF',
       'offBlack': '#050406',

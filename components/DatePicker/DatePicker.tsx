@@ -9,10 +9,11 @@ import { useState } from "react";
 import ReactDatePicker, { CalendarContainer } from "react-datepicker";
 
 interface Props extends Omit<InputProps, "iconLeft" | "type"> {
+  initialDate?: Date;
 }
 
-export function DatePicker({ ...props }: Props) {
-  const [startDate, setStartDate] = useState<Date | null>(new Date());
+export function DatePicker({ initialDate, ...props }: Props) {
+  const [startDate, setStartDate] = useState<Date | null>(initialDate || new Date());
   const [activeDate, setActiveDate] = useState<Date | null>(null);
 
   return (

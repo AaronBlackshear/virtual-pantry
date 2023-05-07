@@ -38,8 +38,8 @@ export function Input({ label, type = 'text', helperText, state, iconLeft, iconR
         )} />
 
         <p className={classNames(
-          "absolute text-body-small text-gray-8 top-2.5 transition-all",
-          "peer-placeholder-shown:top-5 peer-focus:top-2.5",
+          "absolute text-body-small text-gray-8 top-1.5 transition-all",
+          "peer-placeholder-shown:top-4 peer-focus:top-1.5",
           !!iconLeft ? 'left-11' : 'left-4',
         )}>
           {label}
