@@ -2,6 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+.image-placeholder>div {
+  @apply w-16 h-16;
+}
+
+.image-placeholder>div>svg {
+  @apply w-16 h-16;
+}
+
+.react-datepicker__aria-live {
+  @apply absolute h-0 w-0 overflow-hidden whitespace-nowrap;
+}
+
+#custom-calendar .react-datepicker__header--custom {
+  @apply bg-white py-0;
+}
+
+#custom-calendar .react-datepicker__day-names {
+  @apply flex justify-between;
+}
+
+#custom-calendar .react-datepicker__day-name {
+  @apply w-10 h-10 inline-flex justify-center items-center text-caption text-gray-7;
+}
+
+#custom-calendar .custom-day {
+  @apply inline-block;
+}
+
+#custom-calendar .custom-day:focus-visible {
+  @apply outline-none;
+}
+
+#custom-calendar .custom-day.react-datepicker__day--selected>div,
+#custom-calendar .custom-day:hover>div {
+  @apply bg-blue-3 text-white outline-none;
+}
+
+#custom-calendar .custom-day.react-datepicker__day--keyboard-selected>div {
+  @apply bg-blue-8 text-gray-3 ring-0 outline-none;
+}
+
+#custom-calendar .custom-day:hover>div {
+  @apply cursor-pointer
+}
+
 input[type=number].appearance-none::-webkit-inner-spin-button,
 input[type=number].appearance-none::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -11,62 +56,6 @@ input[type=number].appearance-none::-webkit-outer-spin-button {
 input[type=number].appearance-none {
   -moz-appearance: textfield;
 }
-
-/* Font Stlyes */
-.title-1 {
-  @apply text-6xl leading-tight font-bold;
-}
-
-.title-2 {
-  @apply text-5xl leading-tight font-bold;
-}
-
-.title-3 {
-  @apply text-4xl leading-10 font-extrabold;
-}
-
-.headline {
-  @apply text-2xl leading-8 font-extrabold;
-}
-
-.subheadline {
-  @apply text-lg leading-8 font-bold;
-}
-
-.body {
-  @apply text-base font-normal;
-}
-
-.body-bold {
-  @apply text-base font-bold;
-}
-
-.body-small {
-  @apply text-sm leading-4 font-normal;
-}
-
-.body-small-bold {
-  @apply text-sm leading-4 font-bold;
-}
-
-.caption {
-  @apply text-xs font-semibold;
-}
-
-.button-lg {
-  @apply text-base font-semibold;
-}
-
-.button-md {
-  @apply text-sm leading-4 font-bold;
-}
-
-.button-sm {
-  @apply text-xs font-bold;
-}
-
-/* Font Stlyes */
-
 
 .ratio {
   position: relative;
@@ -96,45 +85,4 @@ input[type=number].appearance-none {
 
 .canvas-container>canvas {
   width: 100%;
-}
-
-.image-placeholder>div {
-  @apply w-16 h-16;
-}
-
-.image-placeholder>div>svg {
-  @apply w-16 h-16;
-}
-
-.react-datepicker__aria-live {
-  @apply absolute h-0 w-0 overflow-hidden whitespace-nowrap;
-}
-
-#custom-calendar .react-datepicker__header--custom {
-  @apply bg-white py-0;
-}
-
-#custom-calendar .react-datepicker__day-name {
-  @apply w-10 h-10 inline-flex justify-center items-center caption text-gray-7;
-}
-
-#custom-calendar .custom-day {
-  @apply inline-block;
-}
-
-#custom-calendar .custom-day:focus-visible {
-  @apply outline-none;
-}
-
-#custom-calendar .custom-day.react-datepicker__day--selected>div,
-#custom-calendar .custom-day:hover>div {
-  @apply bg-blue-3 text-white outline-none;
-}
-
-#custom-calendar .custom-day.react-datepicker__day--keyboard-selected>div {
-  @apply bg-blue-8 text-gray-3 ring-0 outline-none;
-}
-
-#custom-calendar .custom-day:hover>div {
-  @apply cursor-pointer
 }

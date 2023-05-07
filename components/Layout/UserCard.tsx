@@ -34,8 +34,8 @@ export function UserCard() {
           sidebarOpen ? "w-full opacity-100 flex-1" : "w-0 opacity-0"
         )}
       >
-        {name && <p className="body-small-bold text-gray-2 whitespace-nowrap">{truncateString(name)}</p>}
-        {user?.email && <p className="caption text-gray-6 whitespace-nowrap">{truncateString(user.email)}</p>}
+        {name && <p className="text-body-small-bold text-gray-2 whitespace-nowrap">{truncateString(name)}</p>}
+        {user?.email && <p className="text-caption text-gray-6 whitespace-nowrap">{truncateString(user.email)}</p>}
       </div>
 
       <div

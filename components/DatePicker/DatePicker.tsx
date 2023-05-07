@@ -9,10 +9,11 @@ import { useState } from "react";
 import ReactDatePicker, { CalendarContainer } from "react-datepicker";
 
 interface Props extends Omit<InputProps, "iconLeft" | "type"> {
+  initialDate?: Date;
 }
 
-export function DatePicker({ ...props }: Props) {
-  const [startDate, setStartDate] = useState<Date | null>(new Date());
+export function DatePicker({ initialDate, ...props }: Props) {
+  const [startDate, setStartDate] = useState<Date | null>(initialDate || new Date());
   const [activeDate, setActiveDate] = useState<Date | null>(null);
 
   return (
@@ -33,7 +34,7 @@ export function DatePicker({ ...props }: Props) {
         return (
           <div className="flex justify-between items-center pb-4 mb-4 border-b-2 border-gray-11 border-dotted">
             <Button variant="secondary" size="sm" iconLeft="chevronUp" disabled={prevMonthButtonDisabled} onClick={decreaseMonth} />
-            <p className="headline space-x-1">
+            <p className="text-headline space-x-1">
               <span className="text-gray-2">{format(date, DATE_PICKER_MONTH_FORMAT)}</span>
               <span className="text-gray-9">{format(date, DATE_PICKER_YEAR_FORMAT)}</span>
             </p>
@@ -47,7 +48,7 @@ export function DatePicker({ ...props }: Props) {
 
         return (
           <div className={classNames(
-            "button-md w-10 h-10 p-0 m-0.5 inline-flex justify-center items-center rounded-lg",
+            "text-button-md w-10 h-10 p-0 m-0.5 inline-flex justify-center items-center rounded-lg",
             !isSameMonth(date, activeDate || new Date()) && "text-gray-9",
             isToday(date) ? "ring-1 ring-blue-3 ring-inset text-blue-3" : "text-gray-3",
           )}>

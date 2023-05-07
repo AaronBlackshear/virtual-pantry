@@ -27,7 +27,7 @@ export function Input({ label, type = 'text', helperText, state, iconLeft, iconR
     )}>
       <label className="relative w-full flex items-center">
         <input {...props} type={type} placeholder={label} className={classNames(
-          "peer h-14 button-md w-full text-gray-2 px-4 pt-6 pb-1.5 bg-white border rounded-2xl overflow-hidden placeholder-transparent transition-all appearance-none",
+          "peer h-14 text-button-md w-full text-gray-2 px-4 pt-6 pb-1.5 bg-white border rounded-2xl overflow-hidden placeholder-transparent transition-all appearance-none",
           "border-[#f1f1f1] focus:border-blue-3 focus:outline outline-blue-3 outline-1",
           "hover:border-blue-3",
           !!iconLeft ? 'pl-11' : 'pl-4',
@@ -38,8 +38,8 @@ export function Input({ label, type = 'text', helperText, state, iconLeft, iconR
         )} />
 
         <p className={classNames(
-          "absolute body-small text-gray-8 top-2.5 transition-all",
-          "peer-placeholder-shown:top-5 peer-focus:top-2.5",
+          "absolute text-body-small text-gray-8 top-1.5 transition-all",
+          "peer-placeholder-shown:top-4 peer-focus:top-1.5",
           !!iconLeft ? 'left-11' : 'left-4',
         )}>
           {label}
@@ -58,7 +58,7 @@ export function Input({ label, type = 'text', helperText, state, iconLeft, iconR
         )}
       </label>
 
-      {helperText && <p className="caption text-gray-8">{helperText}</p>}
+      {helperText && <p className="text-caption text-gray-8">{helperText}</p>}
     </div>
   )
 }

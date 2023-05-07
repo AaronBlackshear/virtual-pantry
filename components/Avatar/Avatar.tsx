@@ -50,13 +50,13 @@ function getAvatarContent({ variant, size, image, initials = "AB" }: AvatarProps
 function getInitialsSizeStyles(size: AvatarSizes): string {
   switch (size) {
     case 'sm':
-      return 'button-md';
+      return 'text-button-md';
 
     case 'md':
-      return 'subheadline';
+      return 'text-subheadline';
 
     case 'lg':
-      return 'headline';
+      return 'text-headline';
   }
 }
 
